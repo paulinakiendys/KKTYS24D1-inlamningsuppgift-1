@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacker News Search</title>
+  </head>
+
+  <body class="bg-dark text-white">
+    <div id="app" class="container my-3">
+      <h1 class="mb-3">Search Hacker News</h1>
+
+      <form id="search-form">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            id="search"
+            class="form-control"
+            placeholder="Enter your search query"
+            aria-label="Search input"
+          />
+
+          <button class="btn btn-primary" type="submit">Search</button>
+          <button class="btn btn-warning" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <div class="spinner-border" role="status" hidden>
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
+      <div class="my-3">
+        <div class="d-flex justify-content-between align-items-end mb-3">
+          <p class="mb-1">Showing results for {query}...</p>
+
+          <div class="form-floating">
+            <select class="form-select" id="sort" aria-label="Sort by select">
+              <option value="points">Points</option>
+              <option value="created_at">Created at</option>
+            </select>
+            <label for="sort">Sort by</label>
+          </div>
+        </div>
+
+        <div class="list-group mb-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action"
+            target="_blank"
+          >
+            <h5 class="mb-1">{title}</h5>
+            <small class="text-muted"
+              >{points} points by {author} at {created_at}</small
+            >
+          </a>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="btn btn-primary">Prev</button>
+          <span>{page}</span>
+          <button class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

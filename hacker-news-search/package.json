@@ -1,5 +1,5 @@
 {
-  "name": "hacker-news",
+  "name": "hacker-news-search",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.75.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }
